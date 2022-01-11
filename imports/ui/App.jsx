@@ -9,6 +9,7 @@ const generateOutputArr = (startRange,endRange) => {
   endRange == '' ? 100 : parseInt(endRange)
 
   if(!(startRange == '' && endRange == '')){
+    if(!(startRange == 0 && endRange == 0)){
 
     for(i=startRange;i<=endRange;i++){
       if(i%3==0 && i%5==0){
@@ -27,8 +28,13 @@ const generateOutputArr = (startRange,endRange) => {
     return outArr;
   }
   else{
+    outArr.push("Enter Non-Zero Value")
+    return outArr
+  }
+}
+  else{
     outArr.push("Enter Some Range")
-     return outArr
+    return outArr
   }
   
 }
